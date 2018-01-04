@@ -72,7 +72,7 @@ namespace LeetCode_HappyNumber
         public static int SumAll(int n)
         {
             var result = 0;
-            foreach (var c in Pow(n).ToString())
+            foreach (var c in n.ToString())
             {
                 result += Pow(Convert.ToInt32(c.ToString()));
             }
