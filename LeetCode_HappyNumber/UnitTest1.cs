@@ -38,6 +38,12 @@ namespace LeetCode_HappyNumber
             Assert.AreEqual(true, Solution.IsHappy(10));
         }
 
+        [TestMethod]
+        public void Input_7_Should_Be_True()
+        {
+            Assert.AreEqual(true,Solution.IsHappy(7));
+        }
+
     }
 
     public class Solution
