@@ -17,6 +17,12 @@ namespace LeetCode_HappyNumber
         {
             Assert.AreEqual(true, Solution.IsHappy(1));
         }
+
+        [TestMethod]
+        public void Pow_Input_2_Should_Be_4()
+        {
+            Assert.AreEqual(4,Solution.Pow(2));
+        }
     }
 
     public class Solution
@@ -28,6 +34,12 @@ namespace LeetCode_HappyNumber
                 return true;
             }
             return false;
+        }
+
+
+        public static int Pow(int n)
+        {
+            return n * n;
         }
     }
 }
