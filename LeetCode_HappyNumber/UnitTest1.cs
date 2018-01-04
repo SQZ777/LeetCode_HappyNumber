@@ -50,6 +50,18 @@ namespace LeetCode_HappyNumber
             Assert.AreEqual(false, Solution.IsHappy(2));
         }
 
+        [TestMethod]
+        public void Input_19_Should_Be_True()
+        {
+            Assert.AreEqual(true,Solution.IsHappy(19));
+        }
+
+        [TestMethod]
+        public void Input_4_Should_Be_false()
+        {
+            Assert.AreEqual(false,Solution.IsHappy(4));
+        }
+
     }
 
     public class Solution
