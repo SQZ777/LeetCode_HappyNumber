@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode_HappyNumber
@@ -70,11 +69,13 @@ namespace LeetCode_HappyNumber
         {
             if (n == 0)
                 return false;
-            var recordList = new List<int>();
-            while (!recordList.Contains(SumAll(n)))
+            var recordList = new int[5000]; //也可以找malloc動態陣列的使用方法
+            var index = 0;
+            while (!Contains(recordList,SumAll(n)))
             {
-                recordList.Add(SumAll(n));
+                recordList[index] = SumAll(n);
                 n = SumAll(n);
+                index++;
             }
             if (n == 1)
                 return true;
@@ -88,11 +89,25 @@ namespace LeetCode_HappyNumber
         public static int SumAll(int n)
         {
             var result = 0;
-            foreach (var c in n.ToString())
+            for (var i = 0; i < n.ToString().Length; i++)
             {
+                var c = n.ToString()[i];
                 result += Pow(Convert.ToInt32(c.ToString()));
             }
             return result;
         }
+
+        public static bool Contains(int[] array, int num)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i]==num)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
