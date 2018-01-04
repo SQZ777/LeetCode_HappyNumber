@@ -11,6 +11,12 @@ namespace LeetCode_HappyNumber
         {
             Assert.AreEqual(false, Solution.IsHappy(0));
         }
+
+        [TestMethod]
+        public void Input_1_Should_Be_True()
+        {
+            Assert.AreEqual(true,Solution.IsHappy(1));
+        }
     }
 
     public class Solution
