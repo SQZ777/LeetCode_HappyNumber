@@ -29,18 +29,31 @@ namespace LeetCode_HappyNumber
         [TestMethod]
         public void SumAll_Input_10_Should_Be_1()
         {
-            Assert.AreEqual(1,Solution.SumAll(10));
+            Assert.AreEqual(1, Solution.SumAll(10));
         }
+
+        [TestMethod]
+        public void Input_10_Should_Be_True()
+        {
+            Assert.AreEqual(true, Solution.IsHappy(10));
+        }
+
     }
 
     public class Solution
     {
         public static bool IsHappy(int n)
         {
-            if (n == 1)
+            if (n == 0)
+                return false;
+            var recordList = new List<int>();
+            while (!recordList.Contains(SumAll(n)) || SumAll(n) != 1)
             {
-                return true;
+                recordList.Add(SumAll(n));
+                n = SumAll(n);
             }
+            if (n == 1)
+                return true;
             return false;
         }
 
