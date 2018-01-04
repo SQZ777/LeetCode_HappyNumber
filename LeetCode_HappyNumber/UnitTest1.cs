@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode_HappyNumber
@@ -21,7 +22,14 @@ namespace LeetCode_HappyNumber
         [TestMethod]
         public void Pow_Input_2_Should_Be_4()
         {
-            Assert.AreEqual(4,Solution.Pow(2));
+            Assert.AreEqual(4, Solution.Pow(2));
+        }
+
+
+        [TestMethod]
+        public void SumAll_Input_10_Should_Be_1()
+        {
+            Assert.AreEqual(1,Solution.SumAll(10));
         }
     }
 
@@ -40,6 +48,16 @@ namespace LeetCode_HappyNumber
         public static int Pow(int n)
         {
             return n * n;
+        }
+
+        public static int SumAll(int n)
+        {
+            var result = 0;
+            foreach (var c in Pow(n).ToString())
+            {
+                result += Pow(Convert.ToInt32(c.ToString()));
+            }
+            return result;
         }
     }
 }
