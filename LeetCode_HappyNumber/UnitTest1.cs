@@ -80,8 +80,6 @@ namespace LeetCode_HappyNumber
                 return true;
             return false;
         }
-
-
         public static int Pow(int n)
         {
             return n * n;
