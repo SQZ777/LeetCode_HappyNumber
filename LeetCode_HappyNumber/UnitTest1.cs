@@ -41,7 +41,13 @@ namespace LeetCode_HappyNumber
         [TestMethod]
         public void Input_7_Should_Be_True()
         {
-            Assert.AreEqual(true,Solution.IsHappy(7));
+            Assert.AreEqual(true, Solution.IsHappy(7));
+        }
+
+        [TestMethod]
+        public void Input_2_Should_Be_False()
+        {
+            Assert.AreEqual(false, Solution.IsHappy(2));
         }
 
     }
@@ -53,7 +59,7 @@ namespace LeetCode_HappyNumber
             if (n == 0)
                 return false;
             var recordList = new List<int>();
-            while (!recordList.Contains(SumAll(n)) || SumAll(n) != 1)
+            while (!recordList.Contains(SumAll(n)))
             {
                 recordList.Add(SumAll(n));
                 n = SumAll(n);
