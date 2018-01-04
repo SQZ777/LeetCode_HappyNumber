@@ -9,7 +9,7 @@ namespace LeetCode_HappyNumber
         [TestMethod]
         public void Input_0_Should_Be_False()
         {
-            Assert.AreEqual(false,Solution.IsHappy(0));
+            Assert.AreEqual(false, Solution.IsHappy(0));
         }
     }
 
@@ -17,7 +17,7 @@ namespace LeetCode_HappyNumber
     {
         public static bool IsHappy(int n)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
